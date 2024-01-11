@@ -1,11 +1,21 @@
 import React from "react";
 
-const Color = ({ color }) => {
+const Color = ({ color, hexValue, isDarkText }) => {
   return (
-    <div className="content" style={{ backgroundColor: color }}>
+    <section
+      className="content"
+      style={{
+        backgroundColor: color,
+        color: isDarkText ? "#000" : "#FFF",
+      }}>
       <p>{color ? color : "Empty Value"}</p>
-    </div>
+      <p>{hexValue ? hexValue : null}</p>
+    </section>
   );
+};
+
+Color.defaultProps = {
+  color: "Empty Color Value",
 };
 
 export default Color;
